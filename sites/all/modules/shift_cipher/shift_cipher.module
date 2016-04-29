@@ -87,18 +87,24 @@ function shift_cipher_form_submit($form, &$form_state) {
 
     for($i = 0; $i < count($phrase_array); $i++) {
         if (ctype_alpha($phrase_array[$i])){
-            if ($direction = 'right') {
+            if ($direction === 'right') {
                 foreach($alphabet as $key => $value) {
                     if ($value === $phrase_array[$i]) {
                         $shift_reference = $key + $shift_value;
-                        array_push($new_phrase, $alphabet[$shift_reference]);
+                        if ($shift_reference > 25) {
+                            $shift_reference = $shift_reference - 26;
+                            array_push($new_phrase, $alphabet[$shift_reference]);
+                        } else array_push($new_phrase, $alphabet[$shift_reference]);
                     }
                 }
             } else {
                 foreach($alphabet as $key => $value) {
-                    if ($key === $phrase_array[$i]) {
-                        $shift_reference = $value - $shift_value;
-                        array_push($new_phrase, $alphabet['$shift_reference']);
+                    if ($value === $phrase_array[$i]) {
+                        $shift_reference = $key - $shift_value;
+                        if ($shift_reference < 0) {
+                            $shift_reference = $shift_reference + 26;
+                            array_push($new_phrase, $alphabet[$shift_reference]);
+                        } else array_push($new_phrase, $alphabet[$shift_reference]);
                     }
                 }
 
