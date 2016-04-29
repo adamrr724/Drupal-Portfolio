@@ -49,11 +49,66 @@ function shift_cipher_form() {
 }
 
 function shift_cipher_form_submit($form, &$form_state) {
-    $value = $form_state['values']['shift_value'];
+    $shift_value = $form_state['values']['shift_value'];
     $direction = $form_state['values']['shift_direction'];
     $phrase = strtolower($form_state['values']['cipher_phrase']);
 
-    $_SESSION['shift_cypher_output'] = $value . $direction . $phrase;
+    $alphabet = array(
+        'a' => '0',
+        'b' => '1',
+        'c' => '2',
+        'd' => '3',
+        'e' => '4',
+        'f' => '5',
+        'g' => '6',
+        'h' => '7',
+        'i' => '8',
+        'j' => '9',
+        'k' => '10',
+        'l' => '11',
+        'm' => '12',
+        'n' => '13',
+        'o' => '14',
+        'p' => '15',
+        'q' => '16',
+        'r' => '17',
+        's' => '18',
+        't' => '19',
+        'u' => '20',
+        'v' => '21',
+        'w' => '22',
+        'x' => '23',
+        'y' => '24',
+        'z' => '25',
+    );
+
+    $new_phrase = array();
+
+    for($i = 0; $i < strlen($phrase); $i++) {
+        if ($direction = 'right') {
+            foreach($alphabet as $key => $value) {
+                if ($key === $phrase[$i]) {
+                    $shift_reference = $value + $shift_value;
+                    array_push($new_phrase, $alphabet['$shift_reference']);
+                } else {
+                    array_push($new_phrase, $phrase[$i]);
+                }
+            }
+        } else {
+            foreach($alphabet as $key => $value) {
+                if ($key === $phrase[$i]) {
+                    $shift_reference = $value - $shift_value;
+                    array_push($new_phrase, $alphabet['$shift_reference']);
+                } else {
+                    array_push($new_phrase, $phrase[$i]);
+                }
+            }
+
+        }
+    }
+
+
+    $_SESSION['shift_cypher_output'] = $new_phrase;
     $form_state['redirect'] = 'cipher_success';
 }
 
