@@ -49,8 +49,8 @@ function shift_cipher_form() {
 }
 
 function element_validate_shift_range($element) {
-    if ($element['#value'] > 100) {
-        form_error($element, t('Numbers must be in between 1 and 100.'));
+    if ($element['#value'] > 26) {
+        form_error($element, t('Numbers must be in between 1 and 26.'));
     }
 }
 
