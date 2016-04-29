@@ -1,0 +1,14 @@
+BDD TESTING STEPS
+
+1. Make menu item for shift cipher page
+2. Make FORM with 3 inputs on shift cipher page
+3. SUBMIT form function to redirect to success page
+    - pass information to SUCCESS FUNCTION
+4. MENU CALLBACK to create success page
+5. SUCCESS FUNCTION prints results on success page
+
+Logic:
+
+1. return three inputs
+2. return lower case versions
+3. return ciphered version of the words
