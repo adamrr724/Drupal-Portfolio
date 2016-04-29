@@ -31,14 +31,14 @@ function shift_cipher_form() {
         '#title' => 'Shift Direction',
         '#type' => 'textfield',
         '#description' => t('Choose to shift either right or left.'),
-        // '#element_validate' => array('element_validate_integer_positive'),
+        '#element_validate' => array('element_validate_direction'),
         '#required' => TRUE,
     );
     $form['cipher_phrase'] = array(
         '#title' => 'Phrase',
         '#type' => 'textfield',
         '#description' => t('Please choose a phrase to encrypt.'),
-        // '#element_validate' => array('element_validate_integer_positive'),
+        '#element_validate' => array('element_validate_phrase'),
         '#required' => TRUE,
     );
     $form['submit'] = array(
@@ -49,8 +49,22 @@ function shift_cipher_form() {
 }
 
 function element_validate_shift_range($element) {
-    if ($element['value'] > 26) {
-        form_error($element, t('Numbers must be in between 1 and 26.'))
+    if ($element['#value'] > 100) {
+        form_error($element, t('Numbers must be in between 1 and 100.'));
+    }
+}
+
+function element_validate_direction($form, &$form_state) {
+    $direction = strtolower($form_state['values']['shift_direction']);
+    if ($direction != 'right' && $direction != 'left' ) {
+        form_set_error('shift_direction', t('Please choose right or left.'));
+    }
+}
+
+function element_validate_phrase($form, &$form_state) {
+    $phrase = strtolower($form_state['values']['cipher_phrase']);
+    if (!preg_match('/^[a-zA-Z0-9,.!? ]*$/', $phrase)) {
+        form_set_error('cipher_phrase', t('Please only include letters, numbers, and regular special characters.'));
     }
 }
 
