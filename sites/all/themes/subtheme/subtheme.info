@@ -1,0 +1,12 @@
+name = Adam's Sub Theme
+core = 7.x
+base theme  = adamstheme
+stylesheets[all][] = css/mystyle.css
+scripts[] = js/scripts.js
+
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[content] = Content
+regions[sidebar] = Sidebar
+regions[highlighted] = Highlighted
+regions[help] = Help
