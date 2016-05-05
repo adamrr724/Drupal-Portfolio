@@ -1,0 +1,74 @@
+.field-name-field-time-frame {
+  font-size: 18px;
+}
+
+.field-name-field-employer {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.field-name-field-location {
+  font-weight: bold;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.field-name-field-time-frame-education {
+  font-size: 18px;
+}
+
+.field-name-field-image-employer {
+  text-align: center;
+}
+
+.field-name-field-employer {
+  text-align: center;
+}
+
+.field-name-field-major {
+  font-size: 18px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.page-node-3 .page-title {
+  text-align: center;
+    color:#003366;
+}
+
+.page-node-3 h2 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.page-node-3 .title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.page-node-3 .title a {
+  text-decoration: none;
+}
+
+.page-node-19 .container {
+  text-align: center;
+}
+
+.page-node-19 li {
+  list-style-type: none;
+}
+
+a {
+  color: grey;
+}
+a:visited {
+  color: grey;
+}
+
+#block-views-experience-block>h2:first-child {
+  text-decoration: underline;
+}
+
+#block-views-education-block>h2:first-child {
+  text-decoration: underline;
+}
