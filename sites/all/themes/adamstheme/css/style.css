@@ -1,0 +1,33 @@
+#header {
+  background-color: grey;
+  margin: -15px -15px 0px -15px;
+  padding: 15px 15px 5px 15px;
+}
+
+#name-and-slogan {
+  float: right;
+  padding-right: 30px;
+  padding-top: 20px;
+  font-size: 2em;
+}
+
+#name-and-slogan a {
+  color: #78de34;
+  text-decoration: none;
+  font-family: fantasy;
+}
+
+#main-menu li {
+}
+
+#main-menu li a {
+  color: #78de34;
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 5px 5px 0px 0px;
+  margin: 10px -21px 0px 0px;
+  padding-left: 5px;
+  padding-right: 10px;
+  font-size: 1em;
+  background-color: grey;
+}
