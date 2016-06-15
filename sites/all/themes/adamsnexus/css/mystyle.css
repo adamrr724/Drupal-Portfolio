@@ -72,3 +72,25 @@ a:visited {
 #block-views-education-block>h2:first-child {
   text-decoration: underline;
 }
+
+#adam-image {
+    max-height: 250px;
+    border-radius: 10%;
+}
+
+#block-block-3 {
+    text-align: center;
+}
+
+.flex-caption {
+    padding: 70px 20px 70px 20px;
+    background-color: #000;
+    border-radius: 7px;
+    opacity: .7;
+}
+
+.page-node #content-wrap img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
